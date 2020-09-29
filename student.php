@@ -1,18 +1,40 @@
-<?php include ('data.php')  ?>
-<!DOCTYPE html>
+
+<?php 
+
+session_start();
+if(isset($_SESSION['username'])){
+	$_SESSION['msg']="You must log in to view this page";
+  $semail=$_SESSION['username'];
+
+    $sname=$_SESSION['name'];
+    $sphone=$_SESSION['phone_no'];
+	
+
+}
+
+if(isset($_GET['logout'])){
+	session_destroy();
+	unset($_SESSION['username']);
+	header("location: login.html");
+}
+
+ ?>
+
+
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Onedu </title>
+  <title>Homepage</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/educa.jpg" rel="icon">
-  
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -30,7 +52,7 @@
   <style>
 table {
   width:100%;
-  padding-left: 100px;
+  padding-left: 50px
 }
 table, th, td {
   border: 1px solid black;
@@ -63,7 +85,7 @@ th, td {
       </div>
       <div class="social-links">
         <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100004771756949"  class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100004771756949" class="facebook"><i class="icofont-facebook"></i></a>
         <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
         <a href="#" class="skype"><i class="icofont-skype"></i></a>
         <a href="https://www.linkedin.com/in/monish-ghosh-1411b8195/" class="linkedin"><i class="icofont-linkedin"></i></i></a>
@@ -75,13 +97,13 @@ th, td {
   <header id="header" class="fixed-top top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html"><img src="assets/img/educa.jpg"><span>.</span></a></h1>
+      <h1 class="logo mr-auto"><a href="#"><img src="assets/img/educa.jpg"><span>.</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
+          
          
           <li class="drop-down"><a href="#services ">Academics</a>
            <ul>
@@ -100,14 +122,20 @@ th, td {
             </ul>
           </li>
           
-          <li><a href="#register">Register</a></li>
-          <li><a href="#bulletin">Bulletin Board</a></li>
-
+          
           <li><a href="#timetable">Time table</a></li>
+
+          <li><a href="#Examination">Examination</a></li>
           <li><a href="#Online_resoures">Online Resources</a></li>
           
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="login.html">Login</a></li>
+          <li><a href="#profile">My Profile</a></li>
+          <li class="drop-down"><?php echo $sname ?> 
+    
+  
+<ul>
+  <li><a href="login.html?logout='1'">logout</a></li>
+</ul>
+</li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -115,89 +143,73 @@ th, td {
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container cla" data-aos="zoom-out" data-aos-delay="100" >
-      <h1>Welcome to <span>Onedu</span> Next Level Learning
-      </h1>
-      <br>
-      <div class="d-flex">
-        <a href="#register" class="btn-get-started scrollto">Get Started</a>
-        
-      </div>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-   
-    <section id="register" class="skills">
-      
-
-      <form action="data.php" method="post" onsubmit="myFunction()">
-
-  <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
+  <!-- ======= login======= -->
+  <br><br><br><br><br><br>
+  
+ 
+  
+    <!-- ======= Footer ======= -->
+  <section id="profile">
+    <p style="padding-right: 1000px;">
+    <div class="form_des" style="padding-right:  400px;padding-left: 200px;">
+      <div class="section-title">
+          <h2>My Profile</h2>
+         
+        </div>
     
-    <label for="Phone"><b>Enter Your Name</b></label>
-    <input type="text" maxlength="30" placeholder="Enter Your Name" name="name" id="name" required>
-    <label for="email"><b>Email</b></label>
-    <input type="text" maxlength="50" placeholder="Enter Email" name="email" id="email" required>
-    <label for="phone"><b>Phone no </b></label>
-    <input type="text" maxlength="50" placeholder="Enter Phone no" name="phno" id="phno" required>
-    <!--<label for="phone"><b>Enter Phone Number</b><br></label>
-    <input type="Phone" name="Enter Your Phone Number" name="phone" id="phone" required><br>-->
+    <h4><p style="border:5px double black;padding: 10px;">Name : <?php echo $sname ?></p>
+       <p style="border:5px double black;padding: 10px;"> E-mail : <?php echo $semail ?></p></p>
+       <p style="border:5px double black;padding: 10px;"> Phone no : <?php echo $sphone ?></p>
+      </h4>
     
+</div></p>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" minlength="8" placeholder="Enter Password" name="psw" id="psw" required>
+  </section>
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" minlength="8" placeholder="Repeat Password" name="rpsw" id="psw-repeat" required>
-    <hr>
-
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" name="register" class="registerbtn">Register</button>
-  </div>
-
-  <div class="container signin">
-    <p>Already have an account? <a href="login.html">Sign in</a>.</p>
-  </div>
-</form>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Counts Section ======= -->
-    <section id="bulletin" class="counts">
-      <div class="container" data-aos="fade-up">
-
-       
-   <div class="section-title">
-          <h2>Bulletin </h2>
-          <h3><span>Bulletin Board</span></h3>
+<!-----------------------------online resources--------------------
+  -------------------------------------->
+  <section id="Online_resoures">
+    <div class="section-title" >
+          <h2>Online Resources</h2>
+          <h3><span>Resources</span></h3>
           
         </div>
-       <div class="sty">
-        <marquee direction="up">
-        <h3>All Classes are suspended due to Covid-19 Pandemic till further notice.</h3><br>
-        <h3>Class 6 class has been rechudeled . New dates will be given soon.</h3><br>
-        <h3>Please pay your remaining dues till month September. </h3><br>
-        <h3>Download Online Resorces available.  </h3>
-       </div>
-     </marquee>
-      </div>
-    </section>
-    <!-- End bulletin Section -->
+    <div style="padding: 120px">
+    <iframe width="420" height="315"
+  src="https://www.youtube.com/embed/JdGbLpWlOpY" allowfullscreen>
+</iframe>
+ <iframe width="420" height="315"
+src="https://www.youtube.com/embed/xhN5Zkm82DA" allowfullscreen>
+</iframe> 
 
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/SAPfI9qsOF8" allowfullscreen>
+</iframe> 
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/xzZLdYd78_8" allowfullscreen>
+</iframe> 
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/IeQFtuXv1nk" allowfullscreen>
+</iframe>
+ <iframe width="420" height="315"
+src="https://www.youtube.com/embed/R3Gx8InTAjM" allowfullscreen>
+</iframe>
+
+     </div>
+   </section>
+    
 
         <section id="timetable" class="about section-bg">
-      <div class="design" style="padding-left: 100px;">
+      <div class="design">
 
-        <caption><div class="section-title">
+        <caption> <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
           <h2>My Time Table</h2>
          
-        </div></caption>
+        </div>
+</caption>
       <table class="design" background=url('img_girl.jpg'); "; id="t01";>
         
          
@@ -291,46 +303,11 @@ th, td {
         
     </section><!-- End Time table Section -->
 
-
-   <!-- online Resource Section -->
-   <section id="Online_resoures">
-    <div class="section-title" >
-          <h2>Online Resources</h2>
-          <h3><span>Resources</span></h3>
-          
-        </div>
-    <div style="padding: 120px">
-    <iframe width="420" height="315"
-  src="https://www.youtube.com/embed/JdGbLpWlOpY" allowfullscreen>
-</iframe>
- <iframe width="420" height="315"
-src="https://www.youtube.com/embed/xhN5Zkm82DA" allowfullscreen>
-</iframe> 
-
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/SAPfI9qsOF8" allowfullscreen>
-</iframe> 
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/xzZLdYd78_8" allowfullscreen>
-</iframe> 
-
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/IeQFtuXv1nk" allowfullscreen>
-</iframe>
- <iframe width="420" height="315"
-src="https://www.youtube.com/embed/R3Gx8InTAjM" allowfullscreen>
-</iframe>
-
-     </div>
-   </section>
+  	<!--if the user login print the information about him-->
 
   
-    
 
-    
-   
 
-  <!-- ======= Footer ======= -->
   <footer id="footer">
 
     
@@ -365,13 +342,9 @@ src="https://www.youtube.com/embed/R3Gx8InTAjM" allowfullscreen>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
-
-<script>
-function myFunction() {
-  alert("You have been registered successfully");
-}
-</script>
+  <?php 
+   
+   //session_destroy();
+ //header('location:login.html') ?>
+ </body>
+ </html>

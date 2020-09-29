@@ -11,8 +11,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/educa.jpg" rel="icon">
-  
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -27,30 +27,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <style>
-table {
-  width:100%;
-  padding-left: 100px;
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-#t01 tr:nth-child(even) {
-  background-color: #eee;
-}
-#t01 tr:nth-child(odd) {
- background-color: #fff;
-}
-#t01 th {
-  background-color: black;
-  color: white;
-}
-</style>
 
 </head>
 
@@ -58,15 +34,15 @@ th, td {
  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:monishghosh7@gmail.com">contact@example.com</a>
+        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
         <i class="icofont-phone"></i> +91 7003402129
       </div>
       <div class="social-links">
         <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100004771756949"  class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
         <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
         <a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="https://www.linkedin.com/in/monish-ghosh-1411b8195/" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
       </div>
     </div>
   </div>
@@ -75,17 +51,17 @@ th, td {
   <header id="header" class="fixed-top top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html"><img src="assets/img/educa.jpg"><span>.</span></a></h1>
+      <h1 class="logo mr-auto"><a href="index.html"><img src="educa.jpg"><span>.</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="active"><a href="index.php">Home</a></li>
          
           <li class="drop-down"><a href="#services ">Academics</a>
            <ul>
-              <li class="drop-down"><a href="#">Class</a>
+              <li class="drop-down"><a href="#">Departments</a>
                
               </li>
               <li class="drop-down"><a href="#">Syllabus</a>
@@ -101,13 +77,12 @@ th, td {
           </li>
           
           <li><a href="#register">Register</a></li>
-          <li><a href="#bulletin">Bulletin Board</a></li>
+          <li><a href="#bulletin">Bulletion Board</a></li>
 
-          <li><a href="#timetable">Time table</a></li>
+          <li><a href="#Examination">Examination</a></li>
           <li><a href="#Online_resoures">Online Resources</a></li>
           
           <li><a href="#contact">Contact</a></li>
-          <li><a href="login.html">Login</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -118,11 +93,11 @@ th, td {
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container cla" data-aos="zoom-out" data-aos-delay="100" >
-      <h1>Welcome to <span>Onedu</span> Next Level Learning
+      <h1>Welcome to <span>Onedu</spa>
       </h1>
       <br>
       <div class="d-flex">
-        <a href="#register" class="btn-get-started scrollto">Get Started</a>
+        <a href="#about" class="btn-get-started scrollto">Get Started</a>
         
       </div>
     </div>
@@ -134,36 +109,34 @@ th, td {
     <section id="register" class="skills">
       
 
-      <form action="data.php" method="post" onsubmit="myFunction()">
-
+      <form action="data.php" method="post">
+        <?php include('error.php') ?>
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
     
-    <label for="Phone"><b>Enter Your Name</b></label>
+    <label for="name"><b>Enter Your Name</b></label>
     <input type="text" maxlength="30" placeholder="Enter Your Name" name="name" id="name" required>
     <label for="email"><b>Email</b></label>
-    <input type="text" maxlength="50" placeholder="Enter Email" name="email" id="email" required>
-    <label for="phone"><b>Phone no </b></label>
-    <input type="text" maxlength="50" placeholder="Enter Phone no" name="phno" id="phno" required>
-    <!--<label for="phone"><b>Enter Phone Number</b><br></label>
-    <input type="Phone" name="Enter Your Phone Number" name="phone" id="phone" required><br>-->
+    <input type="text" size="30" placeholder="Enter Email" name="email" id="email" required>
+    <label for="Phone"><b>Enter Phone Number</b><br></label>
+    <input type="Phone" name="Enter Your Phone Number" name="phone" id="phone" required><br>
     
 
     <label for="psw"><b>Password</b></label>
     <input type="password" minlength="8" placeholder="Enter Password" name="psw" id="psw" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" minlength="8" placeholder="Repeat Password" name="rpsw" id="psw-repeat" required>
+    <input type="password" minlength="8" placeholder="Repeat Password" name="rpsw" id="pswrepeat" required>
     <hr>
 
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" name="register" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn">Register</button>
   </div>
 
   <div class="container signin">
-    <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 </form>
     </section><!-- End Skills Section -->
@@ -172,12 +145,7 @@ th, td {
     <section id="bulletin" class="counts">
       <div class="container" data-aos="fade-up">
 
-       
-   <div class="section-title">
-          <h2>Bulletin </h2>
-          <h3><span>Bulletin Board</span></h3>
-          
-        </div>
+       <p><b><h1 style="text-align: center;color: brown;size: 20px;">BULLETIN BOARD</h1></b></p>
        <div class="sty">
         <marquee direction="up">
         <h3>All Classes are suspended due to Covid-19 Pandemic till further notice.</h3><br>
@@ -187,18 +155,13 @@ th, td {
        </div>
      </marquee>
       </div>
-    </section>
-    <!-- End bulletin Section -->
+    </section><!-- End Counts Section -->
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+      <div class="design">
 
-
-        <section id="timetable" class="about section-bg">
-      <div class="design" style="padding-left: 100px;">
-
-        <caption><div class="section-title">
-          <h2>My Time Table</h2>
-         
-        </div></caption>
-      <table class="design" background=url('img_girl.jpg'); "; id="t01";>
+        <caption><p><h1 style="text-align: center;color: blue;border: 20px; size:50px;"><u>Time Table</u></h1></p></caption>
+      <table class="design" background=url('img_girl.jpg');>
         
          
         <tr>
@@ -230,7 +193,7 @@ th, td {
           <td>History</td>
           <td>Language 1</td>
           <td> Language 2
-        </td>
+            </td>
           <td>Maths</td>
           <td>Basic Science</td>
           <td>Maths</td>
@@ -289,42 +252,9 @@ th, td {
       
       </table></div>
         
-    </section><!-- End Time table Section -->
+    </section><!-- End About Section -->
 
-
-   <!-- online Resource Section -->
-   <section id="Online_resoures">
-    <div class="section-title" >
-          <h2>Online Resources</h2>
-          <h3><span>Resources</span></h3>
-          
-        </div>
-    <div style="padding: 120px">
-    <iframe width="420" height="315"
-  src="https://www.youtube.com/embed/JdGbLpWlOpY" allowfullscreen>
-</iframe>
- <iframe width="420" height="315"
-src="https://www.youtube.com/embed/xhN5Zkm82DA" allowfullscreen>
-</iframe> 
-
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/SAPfI9qsOF8" allowfullscreen>
-</iframe> 
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/xzZLdYd78_8" allowfullscreen>
-</iframe> 
-
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/IeQFtuXv1nk" allowfullscreen>
-</iframe>
- <iframe width="420" height="315"
-src="https://www.youtube.com/embed/R3Gx8InTAjM" allowfullscreen>
-</iframe>
-
-     </div>
-   </section>
-
-  
+    <!-- ======= Enter new student details ======= -->
     
 
     
@@ -370,8 +300,13 @@ src="https://www.youtube.com/embed/R3Gx8InTAjM" allowfullscreen>
 
 </html>
 
-<script>
-function myFunction() {
-  alert("You have been registered successfully");
-}
-</script>
+<!--<script>
+  $(document).ready(function(){
+    $('free,#nom').keyup(function(){
+      var textValue1=$('$free').val();
+      var textValue2=$('$nom').val();
+      $('tamt').val(textValue1 * textValue2);
+    });
+  });
+
+</script>*/-->

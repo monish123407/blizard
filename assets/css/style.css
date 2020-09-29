@@ -1,9 +1,3 @@
-/**
-* Template Name: BizLand - v1.1.0
-* Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
@@ -164,9 +158,10 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #header {
   background: #fff;
+  height: 80px;
   transition: all 0.5s;
   z-index: 997;
-  padding: 25px 0;
+  padding: 1px 0;
   top: 40px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
@@ -208,13 +203,87 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/*login page ------------------------*?
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 120px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 1px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 100px;
+  border-radius: 40px;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 10px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+/*end of loginpage*/
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
 .nav-menu ul {
   margin: 0;
-  padding: 0;
+  padding: 0px;
   list-style: none;
 }
 
@@ -449,7 +518,8 @@ h1, h2, h3, h4, h5, h6 {
 .sty{
   height: 500px;
   border: 5px solid black;
-  background: #E4F5F5;
+  color: black;
+  background: url("../img/hero-bg.jpg")top left;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 30px;
@@ -634,7 +704,9 @@ section {
     width: 50%;
   }
 }
-
+#Online_resoures{
+   background: #fff;
+}
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -649,6 +721,7 @@ section {
   color: #444444;
   font-size: 14px;
   background: #f1f6fe;
+
 }
 
 #footer .footer-newsletter {
@@ -833,7 +906,7 @@ td{
   width: 100%;
   
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 100px;
 
 
 }
@@ -897,6 +970,15 @@ a {
 .signin {
   background-color: #f1f1f1;
   text-align: center;
+}
+
+
+.form_des{
+  padding-left: 200px;
+  size: 20px;
+  color: brown;
+  border: 5px doubled black;
+
 }
 /*end of form ..............................................
 ............................................../*
